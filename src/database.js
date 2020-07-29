@@ -7,13 +7,14 @@ let database = null;
 async function startDatabase() {
 	const mongo =  new MongoMemoryServer();
 	const mongoDBURL = await mongo.getConnectionString();
-	console.log(mongoDBURL)
+
 	const connection = await MongoClient.connect(mongoDBURL,{
 		useUnifiedTopology: true 
 	})
 
 
-	if(!database){
+	if(!database){	
+		console.log(mongoDBURL)
 		database = connection.db();
 		await database.collection('events').insertMany([
 			{
