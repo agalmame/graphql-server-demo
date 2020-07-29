@@ -1,4 +1,4 @@
-const { buildSchema }   =  require("graphql")
+const { buildSchema } = require("graphql")
 
 
 const schema = buildSchema(`
@@ -6,7 +6,7 @@ const schema = buildSchema(`
 		id: ID!
 		title: String!
 		description: String
-		date: String
+		data: String
 		attendants: [Person!]
 	}
 
@@ -22,7 +22,7 @@ const schema = buildSchema(`
 	}
 
 	type Mutation {
-		editEvent(id: Int!, title: String!, description: String!): Event!
+		editEvent(id: Int!, title: String!, description: String!): Event
 	}
 `)
 

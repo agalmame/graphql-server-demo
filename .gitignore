@@ -1,4 +1,4 @@
 mongodb-binaries
 node_modules
 *.swp
-
+*.env
